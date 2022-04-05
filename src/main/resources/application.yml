@@ -1,0 +1,28 @@
+spring:
+ profiles:
+  active: dev
+
+---
+spring:
+ profiles: dev
+ datasource:
+   url: jdbc:oracle:thin:@//localhost:1521/XEPDB1
+   username: bot
+   password: bot
+   driver-class-name: oracle.jdbc.OracleDriver
+   #type: org.apache.tomcat.jdbc.pool.DataSource
+   hikari:
+    minimumIdle: 5
+    maximumPoolSize: 20
+    idleTimeout: 30000
+    maxLifetime: 2000000
+    connectionTimeout: 30000
+    poolName: HikariPoolBot
+ jpa:
+  hibernate.ddl-auto: update
+  generate-ddl: true
+  show-sql: true
+  database-platform: org.hibernate.dialect.Oracle12cDialect
+telegram:
+ key: 1741701460:AAEUSwgZGqouaijP5KTjn0yWx81Ftd4vQO8
+ url: https://api.telegram.org/bot<<token>>/
